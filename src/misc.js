@@ -60,6 +60,15 @@ export async function setLockView(data) {
   }
 }
 
+export async function getLockView() {
+  data.panLock = canvas.scene.getFlag('LockView', 'lockPan');
+  data.zoomLock = canvas.scene.getFlag('LockView', 'lockZoom');
+  data.boundingBox = canvas.scene.getFlag('LockView', 'boundingBox');
+  data.viewbox = canvas.scene.getFlag('LockView', 'viewbox');
+  data.editViewbox = canvas.scene.getFlag('LockView', 'editViewbox');
+  return data;
+}
+
 /*
  * Get whether the module is enabled for the user
  */
